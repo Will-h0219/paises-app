@@ -1,0 +1,57 @@
+<div *ngIf="!pais; else divPais" class="alert alert-info">
+    Espere por favor...
+</div>
+
+<ng-template #divPais>
+
+    <div class="row">
+        <div class="col-12">
+            <h1>País: <small>{{ pais[0].name.common }}</small></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <h3>Bandera</h3>
+            <img [src]="pais[0].flags.svg" class="img-thumbnail" alt="flag">
+        </div>
+
+        <div class="col">
+            <h3>Información</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Población</strong> {{ pais[0].population | number }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Area en km2</strong> {{ pais[0].area | number }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Código cca3</strong> {{ pais[0].cca3 }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <h3>Traducciones</h3>
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primary mr-1">{{ pais[0].translations.ces.official }}</span>
+            <span class="badge bg-primary mr-1">{{ pais[0].translations.cym.official }}</span>
+            <span class="badge bg-primary mr-1">{{ pais[0].translations.jpn.official }}</span>
+            <span class="badge bg-primary mr-1">{{ pais[0].translations.hun.official }}</span>
+            <span class="badge bg-primary mr-1">{{ pais[0].translations.spa.official }}</span>
+            <span class="badge bg-primary mr-1">{{ pais[0].translations.kor.official }}</span>
+            <span class="badge bg-primary mr-1">{{ pais[0].translations.pol.official }}</span>
+            <span class="badge bg-primary mr-1">{{ pais[0].translations.per.official }}</span>
+            <span class="badge bg-primary mr-1">{{ pais[0].translations.swe.official }}</span>
+            <span class="badge bg-primary mr-1">{{ pais[0].translations.zho.official }}</span>
+        </div>
+    </div>
+
+    <!-- <pre class="mt-5">
+        {{ pais[0] | json}}
+    </pre> -->
+
+</ng-template>
+
